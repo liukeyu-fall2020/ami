@@ -1,0 +1,31 @@
+version: 2
+jobs:        
+  build:
+    docker:
+      - image: hashicorp/packer:1.1.1
+    steps:
+      - checkout # check out source code to working directory
+      - run:
+          name: Validate ami
+          command: 
+            packer validate  
+                    -var "aws_access_key=${aws_access_key}"
+                    -var "aws_secret_key=${aws_secret_key}" 
+                    -var 'aws_region=us-east-2' 
+                    -var 'subnet_id=subnet-9fa651f4' 
+                    -var 'ami_users=328412259861'
+                    -var 'source_ami=ami-0fc20dd1da406780b' 
+                    ubuntu-ami.json
+      - run:
+          name: build ami
+          command: 
+            packer build  
+                    -var "aws_access_key=${aws_access_key}" 
+                    -var "aws_secret_key=${aws_secret_key}" 
+                    -var 'aws_region=us-east-2' 
+                    -var 'subnet_id=subnet-9fa651f4' 
+                    -var 'ami_users=328412259861'
+                    -var 'source_ami=ami-0fc20dd1da406780b' 
+                    ubuntu-ami.json
+
+
