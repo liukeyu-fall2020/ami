@@ -11,21 +11,21 @@ jobs:
             packer validate  
                     -var "aws_access_key=${aws_access_key}"
                     -var "aws_secret_key=${aws_secret_key}" 
-                    -var 'aws_region=us-east-2' 
-                    -var 'subnet_id=subnet-9fa651f4' 
-                    -var 'ami_users=328412259861'
-                    -var 'source_ami=ami-0fc20dd1da406780b' 
-                    ubuntu-ami.json
+                    -var 'aws_region=us-east-1' 
+                    -var 'subnet_id=subnet-e754e6c6' 
+                    -var 'ami_users=359410113455'
+                    -var 'source_ami=ami-0817d428a6fb68645' 
+                    ami.json
       - run:
           name: build ami
           command: 
             packer build  
                     -var "aws_access_key=${aws_access_key}" 
                     -var "aws_secret_key=${aws_secret_key}" 
-                    -var 'aws_region=us-east-2' 
+                    -var 'aws_region=us-east-1' 
                     -var 'subnet_id=subnet-9fa651f4' 
-                    -var 'ami_users=328412259861'
-                    -var 'source_ami=ami-0fc20dd1da406780b' 
-                    ubuntu-ami.json
+                    -var 'ami_users=359410113455'
+                    -var 'source_ami=ami-0817d428a6fb68645' 
+                    ami.json
 
 
