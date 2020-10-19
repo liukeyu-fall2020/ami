@@ -21,5 +21,5 @@ packer build \
 or 
 
 ```
-packer build -var-file=./vars.json ami.json
+Done automated by CI-CD
 ```
