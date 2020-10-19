@@ -28,4 +28,8 @@ jobs:
                     -var 'source_ami=ami-0817d428a6fb68645' 
                     ami.json
 
-
+workflows:
+  version: 2
+  build-workflow:
+    jobs:
+      - build
