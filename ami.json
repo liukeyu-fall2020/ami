@@ -5,11 +5,13 @@
         "aws_region": "",
         "subnet_id": "",
         "source_ami": "ami-0817d428a6fb68645",
-        "ssh_username": "ubuntu"
+        "ssh_username": "ubuntu",
+        "ami_users":""
     },
     "builders": [
         {
             "type": "amazon-ebs",
+            "ami_users":"{{user `ami_users`}}",
             "access_key": "{{user `aws_access_key`}}",
             "secret_key": "{{user `aws_secret_key`}}",
             "region": "{{user `aws_region`}}",
@@ -37,6 +39,7 @@
             ],
             "inline": [
                 "sudo apt-get update",
+                "sudo apt-get install -y maven",
                 "sudo apt-get install dialog apt-utils -y",
                 "sudo apt install -y openjdk-8-jdk openjdk-8-jre",
                 "sudo apt-get -y install ruby",
