@@ -19,7 +19,6 @@ packer build  \
     -var 'source_ami=ami-0817d428a6fb68645'  \
     ami.json
 ```
-
 or 
 
 ```
