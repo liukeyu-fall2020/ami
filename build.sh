@@ -3,4 +3,5 @@ packer build  \
     -var 'subnet_id=subnet-e754e6c6'  \
     -var 'ami_users=359410113455' \
     -var 'source_ami=ami-0817d428a6fb68645'  \
+    11
     ami.json
