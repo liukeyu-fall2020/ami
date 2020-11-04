@@ -1,8 +1,8 @@
 {
     "variables": {
-        "aws_access_key": "",
-        "aws_secret_key": "",
-        "aws_region": "",
+        "aws_access_key": "${{ secrets.AWS_ACCESS_KEY }}",
+        "aws_secret_key": "${{ secrets.AWS_SECRET_KEY }}",
+        "aws_region": "us-east-1",
         "subnet_id": "subnet-e754e6c6",
         "source_ami": "ami-0817d428a6fb68645",
         "ssh_username": "ubuntu",
@@ -39,11 +39,7 @@
             ],
             "inline": [
                 "sudo apt-get update",
-                "sudo apt-get install -y maven",
-                "sudo apt-get install dialog apt-utils -y",
-                "sudo apt install -y openjdk-8-jdk openjdk-8-jre",
-                "sudo apt-get -y install ruby",
-                "sudo apt-get -y install wget"
+                "sudo apt-get update&&sudo apt install -y openjdk-8-jdk openjdk-8-jre"
             ]
         }
     ]
