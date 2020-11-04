@@ -22,5 +22,5 @@ packer build  \
 or 
 
 ```
-Done automated by CI-CD ffff
+Done automated by CI-CD
 ```
