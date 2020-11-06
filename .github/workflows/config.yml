@@ -11,11 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Packer build
-        uses: riznob/packer-build-action@v1.1
+        uses: zmingxie/packer-ami-builder@master
         with:
-          templateFile: 'ami.json'
-          varFile: 'vars.json'
-          workingDir: '.'
+          packerArgs: 'ami.json'
+          workDir: '.'
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
