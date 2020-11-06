@@ -7,7 +7,7 @@
 packer validate ami.json
 ```
 
-## Build AMI
+## Build AMIasdasdasdasd
 
 ```sh
 
