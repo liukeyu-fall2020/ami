@@ -13,6 +13,6 @@ packer validate ami.json
 
 or 
 
-```
+``` 
 Done automated by CI-CD
 ```
